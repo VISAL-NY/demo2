@@ -40,7 +40,11 @@ const CartItem({super.key});
     return Card(
       elevation: 2,
       child: ListTile(
-        leading: Image.network(image),
+        leading: SizedBox(
+          height: 80,
+          width: 80,
+          child: Image.network(image)
+          ),
         title: Text(title),
         subtitle: Text(ConvertToCurrency.convertCurrency(price),style: const TextStyle(color: Colors.green,fontSize: 16),),
       ),

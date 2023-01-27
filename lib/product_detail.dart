@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:demo2/api/product_api.dart';
+import 'package:demo2/cart_item.dart';
 import 'package:demo2/model/couter_provider.dart';
 import 'package:demo2/widget/item_product_widget.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,7 @@ class _ProductDetailState extends State<ProductDetail> {
               badgeContent: Text(Provider.of<CounterProvider>(context).count.toString(),style: const TextStyle(color: Colors.white),),
               child: IconButton(
                 onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const CartItem()));
                    print(global.productList);
                 },
                 icon:const Icon(Icons.shopping_cart,color: Colors.black,)
